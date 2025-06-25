@@ -1,0 +1,37 @@
+/* Outer container to arrange blocks */
+#outer_container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Common styles for all blocks */
+.inner_container {
+    width: 250px;
+    height: 150px;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background-color: #f5f5f5; /* default, will be overridden */
+}
+
+/* Individual block colors */
+#container1 {
+    background-color: #ffe4e1; /* Light pink */
+}
+
+#container2 {
+    background-color: #e6f7ff; /* Light blue */
+}
+
+#container3 {
+    background-color: #f0fff0; /* Light green */
+}
+
+#container4 {
+    background-color: #fffbe6; /* Light yellow */
+}
