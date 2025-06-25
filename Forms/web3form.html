@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web3Forms - Login & Signup</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 50px;
+            padding: 50px;
+        }
+
+        form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        label, input, textarea, button {
+            width: 100%;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #4CAF50;
+            border: none;
+            color: white;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Login Form -->
+    <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="90583e8c-1291-4d32-a8c4-95bd7901826f">
+        <h2>Login</h2>
+        <label for="login-username">Username:</label>
+        <input type="text" id="login-username" name="Username" required>
+
+        <label for="login-password">Password:</label>
+        <input type="password" id="login-password" name="Password" required>
+
+        <input type="hidden" name="form_type" value="login">
+        <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
+        <button type="submit">Login</button>
+    </form>
+
+    <!-- Signup Form -->
+    <form action="https://api.web3forms.com/submit" method="POST">
+        <input type="hidden" name="access_key" value="90583e8c-1291-4d32-a8c4-95bd7901826f">
+        <h2>Signup</h2>
+        <label for="signup-name">Name:</label>
+        <input type="text" id="signup-name" name="Name" required>
+
+        <label for="signup-username">Username:</label>
+        <input type="text" id="signup-username" name="Username" required>
+
+        <label for="signup-password">Password:</label>
+        <input type="password" id="signup-password" name="Password" required>
+
+        <label for="signup-confirm-password">Re-enter Password:</label>
+        <input type="password" id="signup-confirm-password" name="Confirm_Password" required>
+
+        <input type="hidden" name="form_type" value="signup">
+        <input type="hidden" name="redirect" value="https://web3forms.com/success">
+
+        <button type="submit">Sign Up</button>
+    </form>
+
+</body>
+</html>
