@@ -1,0 +1,50 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    background-color: darkcyan;
+    height: 100%;
+    width: 100%;
+    padding: 0.5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.animation_element {
+    height: 15%;
+    width: 15%;
+    background-color: aquamarine;
+    color: bisque;
+    border: 0.2rem solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    animation: bounce 2s infinite alternate;
+}
+
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+        background-color: aquamarine;
+    }
+    50% {
+        transform: translateY(-50px) scale(1.1);
+        background-color: mediumaquamarine;
+    }
+    100% {
+        transform: translateY(0);
+        background-color: aquamarine;
+    }
+}
+
+/*flex box, media query, */
