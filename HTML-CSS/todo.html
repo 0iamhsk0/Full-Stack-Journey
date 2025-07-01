@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple To-Do List</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .todo-container {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 300px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        li {
+            background: #eee;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 4px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        button {
+            background: #ff4d4d;
+            border: none;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #ff1a1a;
+        }
+    </style>
+</head>
+<body>
+    <div class="todo-container">
+        <h2>Simple To-Do List</h2>
+        <input type="text" id="todo-input" placeholder="Add a new task...">
+        <ul id="todo-list"></ul>
+    </div>
+
+    <script>
+        const input = document.getElementById('todo-input');
+        const list = document.getElementById('todo-list');
+
+        input.addEventListener('keypress', function(event) {
+            if (event.key === 'Enter' && input.value.trim() !== '') {
+                addTask(input.value.trim());
+                input.value = '';
+            }
+        });
+
+        function addTask(task) {
+            const li = document.createElement('li');
+            li.textContent = task;
+
+            const deleteBtn = document.createElement('button');
+            deleteBtn.textContent = 'Delete';
+            deleteBtn.onclick = function() {
+                list.removeChild(li);
+            };
+
+            li.appendChild(deleteBtn);
+            list.appendChild(li);
+        }
+    </script>
+</body>
+</html>
