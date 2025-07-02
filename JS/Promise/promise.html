@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Promise Example</title>
+</head>
+<body>
+  <div id="output"></div>
+  <script>
+    const output = document.getElementById("output");
+
+    function logToPage(message) {
+      output.innerHTML += message + "<br>";
+    }
+
+    const firstTask = new Promise((resolve, reject) => {
+      setTimeout(() => {
+        logToPage("Async Task completed");
+        resolve();
+      }, 2000);
+    });
+
+    firstTask.then(() => logToPage("First task resolved"));
+  </script>
+</body>
+</html>
