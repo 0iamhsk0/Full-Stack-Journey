@@ -2,7 +2,7 @@ const timeout = 2000; // 2 seconds delay
 
 const authTask = new Promise((resolve, reject) => {
     setTimeout(() => {
-        const hasError = false; // Set to true to simulate error
+        const hasError = false;
         const username = "gamer123";
         if (hasError) {
             reject("Authentication failed: Invalid credentials.");
