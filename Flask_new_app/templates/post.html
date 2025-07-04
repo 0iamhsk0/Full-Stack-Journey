@@ -7,15 +7,16 @@
 <body>
     <h1>Welcome, your inputted ID is: {{ id }}</h1>
 
-    {% if id.isdigit() %}
-        {% if id > 100 %}
-            <p>It's a Big ID</p>
-        {% else %}
-            <p>It's a Small ID</p>
-        {% endif %}
+{% if id.isdigit() %}
+    {% if id|int > 100 %}
+        <p>It's a Big ID</p>
     {% else %}
-        <p>ID is not numeric</p>
+        <p>It's a Small ID</p>
     {% endif %}
+{% else %}
+    <p>ID is not numeric</p>
+{% endif %}
+
 
 </body>
 </html>

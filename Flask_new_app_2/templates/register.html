@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+</head>
+<body>
+    <h1>Register</h1>
+
+    {% if errors %}
+        <ul style="color: red;">
+            {% for error in errors %}
+                <li>{{ error }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form method="POST" action="/register">
+        <label>Username:</label><br>
+        <input type="text" name="username" placeholder="Enter username"><br><br>
+
+        <label>Email:</label><br>
+        <input type="text" name="email" placeholder="Enter email"><br><br>
+
+        <button type="submit">Register</button>
+    </form>
+</body>
+</html>

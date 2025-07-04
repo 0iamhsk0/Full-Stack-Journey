@@ -1,0 +1,7 @@
+<h1>Hello, {{username}}!</h1>
+<p>Your active games are:</p>
+<ul>
+    {% for item in items %}
+        <li>{{ item }}</li>
+    {% endfor %}
+</ul>
