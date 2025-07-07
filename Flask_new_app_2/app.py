@@ -135,7 +135,7 @@ def session_login():
     return redirect(url_for('profile'))
 
 @app.route('/profile')
-def profile():
+def profile():  
     username = session.get('username', 'Guest')
     return render_template('profile.html', username=username)
 
