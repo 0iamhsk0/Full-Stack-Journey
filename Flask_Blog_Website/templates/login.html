@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="min-h-screen bg-medium-background flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-md w-full">
+        <div class="card">
+            <div class="p-8">
+                <h2 class="text-3xl font-bold text-center text-medium-primary mb-8">Sign In</h2>
+                
+                <form method="POST" class="space-y-6">
+                    <div>
+                        <label for="username" class="block text-sm font-medium text-medium-primary mb-2">Username</label>
+                        <input type="text" id="username" name="username" required class="input-field">
+                    </div>
+                    
+                    <div>
+                        <label for="password" class="block text-sm font-medium text-medium-primary mb-2">Password</label>
+                        <input type="password" id="password" name="password" required class="input-field">
+                    </div>
+                    
+                    <button type="submit" class="btn-primary w-full">Sign In</button>
+                </form>
+                
+                <div class="mt-6 text-center">
+                    <p class="text-medium-primary">Don't have an account? 
+                        <a href="{{ url_for('register') }}" class="text-medium-accent hover:text-green-700">Sign up</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

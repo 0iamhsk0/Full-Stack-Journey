@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="min-h-screen bg-medium-background py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between items-center mb-8">
+            <h1 class="text-4xl font-bold text-medium-primary">All Posts</h1>
+            {% if session.user_id %}
+            <a href="{{ url_for('write_post') }}" class="btn-primary">Write New Post</a>
+            {% endif %}
+        </div>
+
+        <!-- Search and Filter -->
+        <div class="mb-8 flex flex-col md:flex-row gap-4">
+            <form method="GET" class="flex-1">
+                <input type="text" name="search" placeholder="Search posts..." 
+                       value="{{ search_query or '' }}" class="input-field">
+            </form>
+            <div class="flex gap-2 flex-wrap">
+                <a href="{{ url_for('all_posts') }}" 
+                   class="px-4 py-2 rounded-full {% if not current_category %}bg-medium-accent text-white{% else %}bg-medium-muted text-medium-primary{% endif %}">All</a>
+                {% for category in categories %}
+                <a href="{{ url_for('all_posts', category=category) }}" 
+                   class="px-4 py-2 rounded-full {% if current_category == category %}bg-medium-accent text-white{% else %}bg-medium-muted text-medium-primary{% endif %}">{{ category }}</a>
+                {% endfor %}
+            </div>
+        </div>
+
+        <!-- Posts Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for post in posts %}
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                {% if post.featured_image %}
+                <img src="{{ post.featured_image }}" alt="{{ post.title }}" class="w-full h-48 object-cover">
+                {% endif %}
+                <div class="p-6">
+                    <div class="flex items-center mb-2">
+                        <span class="text-xs text-medium-accent bg-green-100 px-2 py-1 rounded">{{ post.category }}</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-medium-primary mb-2">
+                        <a href="{{ url_for('view_post', post_id=post.id) }}" class="hover:text-green-700">{{ post.title }}</a>
+                    </h3>
+                    <p class="text-medium-primary mb-4 line-clamp-3">{{ post.summary }}</p>
+                    <div class="flex items-center text-sm text-medium-primary">
+                        <span>{{ post.user.first_name }} {{ post.user.last_name }}</span>
+                        <span class="mx-2">•</span>
+                        <span>{{ post.created_at }}</span>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+
+        {% if not posts %}
+        <div class="text-center py-12">
+            <p class="text-xl text-medium-primary">No posts found.</p>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

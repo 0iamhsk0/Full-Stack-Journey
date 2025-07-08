@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="min-h-screen bg-medium-background py-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="mb-8">
+            <h1 class="text-4xl font-bold text-medium-primary">Your Profile</h1>
+            <p class="text-medium-primary mt-2">Welcome back, {{ session.username }}!</p>
+        </div>
+        
+        <div class="flex justify-between items-center mb-8">
+            <h2 class="text-2xl font-semibold text-medium-primary">Your Posts ({{ user_posts|length }})</h2>
+            <a href="{{ url_for('write_post') }}" class="btn-primary">Write New Post</a>
+        </div>
+        
+        {% if user_posts %}
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for post in user_posts %}
+            <article class="card hover:shadow-lg transition-shadow duration-300">
+                {% if post.featured_image %}
+                <img src="{{ post.featured_image }}" alt="{{ post.title }}" class="w-full h-48 object-cover">
+                {% endif %}
+                <div class="p-6">
+                    <div class="flex items-center mb-2">
+                        <span class="text-xs text-medium-accent bg-green-100 px-2 py-1 rounded">{{ post.category }}</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-medium-primary mb-2">
+                        <a href="{{ url_for('view_post', post_id=post.id) }}" class="hover:text-green-700">{{ post.title }}</a>
+                    </h3>
+                    <p class="text-medium-primary mb-4 line-clamp-3">{{ post.summary }}</p>
+                    <div class="flex items-center text-sm text-medium-primary">
+                        <span>{{ post.created_at }}</span>
+                    </div>
+                </div>
+            </article>
+            {% endfor %}
+        </div>
+        {% else %}
+        <div class="text-center py-12">
+            <p class="text-xl text-medium-primary mb-4">You haven't written any posts yet.</p>
+            <a href="{{ url_for('write_post') }}" class="btn-primary">Write Your First Post</a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="min-h-screen bg-medium-background py-8">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <article class="card">
+            {% if post.featured_image %}
+            <img src="{{ post.featured_image }}" alt="{{ post.title }}" class="w-full h-96 object-cover">
+            {% endif %}
+            
+            <div class="p-8">
+                <div class="mb-4">
+                    <span class="text-sm text-medium-accent bg-green-100 px-3 py-1 rounded">{{ post.category }}</span>
+                </div>
+                
+                <h1 class="text-4xl font-bold text-medium-primary mb-4">{{ post.title }}</h1>
+                
+                {% if post.subtitle %}
+                <h2 class="text-xl text-medium-primary mb-6 italic">{{ post.subtitle }}</h2>
+                {% endif %}
+                
+                <div class="flex items-center mb-8 pb-6 border-b border-medium-border">
+                    <div>
+                        <p class="font-medium text-medium-primary">{{ post.user.first_name }} {{ post.user.last_name }}</p>
+                        <p class="text-sm text-medium-primary">{{ post.created_at }}</p>
+                    </div>
+                </div>
+                
+                <div class="prose max-w-none text-medium-primary">
+                    {{ post.main_content | safe }}
+                </div>
+            </div>
+        </article>
+        
+        <div class="mt-8 text-center">
+            <a href="{{ url_for('all_posts') }}" class="btn-secondary">← Back to All Posts</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

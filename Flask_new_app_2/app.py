@@ -87,6 +87,8 @@
 # if __name__ == '__main__':
 #     app.run(debug=True)
 
+### cleaned code
+
 from flask import Flask, render_template, request, make_response, redirect, url_for, session
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, SubmitField

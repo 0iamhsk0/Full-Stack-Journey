@@ -1,0 +1,76 @@
+/*
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*/
+/* Make sure to process this file with Tailwind CLI or PostCSS before using in production */
+
+@layer base {
+  :root {
+    --medium-background: #fafafa;
+    --medium-primary: #292929;
+    --medium-accent: #1a8917;
+    --medium-muted: #f1f1f1;
+    --medium-border: #e1e1e1;
+  }
+
+  body {
+    background-color: var(--medium-background);
+    color: var(--medium-primary);
+  }
+}
+
+  .btn-primary {
+    background-color: var(--medium-accent);
+    color: #fff;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 9999px;
+    transition-property: background-color;
+    transition-duration: 200ms;
+  }
+  .btn-primary:hover {
+    background-color: #15803d; /* Tailwind's green-700 */
+  }
+
+  .btn-secondary {
+    background-color: var(--medium-muted);
+    color: var(--medium-primary);
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-radius: 9999px;
+    transition-property: background-color;
+    transition-duration: 200ms;
+  }
+  .btn-secondary:hover {
+    background-color: #e5e7eb; /* Tailwind's gray-200 */
+  }
+
+  .card {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.06);
+    border: 1px solid var(--medium-border);
+    overflow: hidden;
+  }
+
+  .input-field {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    border: 1px solid var(--medium-border);
+    border-radius: 0.5rem;
+    outline: none;
+    transition: box-shadow 0.2s, border-color 0.2s;
+  }
+  .input-field:focus {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--medium-accent);
+    border-color: transparent;
+  }

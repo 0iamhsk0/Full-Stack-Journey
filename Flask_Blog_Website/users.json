@@ -1,0 +1,24 @@
+[
+  {
+    "username": "alycia662571",
+    "password": "heath123",
+    "user_id": "aec92dd8-79dd-4b22-9deb-a2af00d568c8",
+    "first_name": "Heath",
+    "last_name": "Hills",
+    "email": "heath@example.com",
+    "role": "User",
+    "created_at": "Sun, 10/15/2023",
+    "updated_at": "Sun, 10/15/2023"
+  },
+  {
+    "username": "lesch.blaise5895",
+    "password": "john123",
+    "user_id": "61aa2cd5-978b-45f6-b592-9964ac04c855",
+    "first_name": "John",
+    "last_name": "Doe",
+    "email": "john@example.com",
+    "role": "User",
+    "created_at": "Sun, 10/15/2023",
+    "updated_at": "Sun, 10/15/2023"
+  }
+]
