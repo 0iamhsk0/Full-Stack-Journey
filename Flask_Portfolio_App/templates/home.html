@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<div class="flex flex-col items-center">
+    <img src="{{ url_for('static', filename='images/yourphoto.jpg') }}" alt="Your photo" class="rounded-full w-32 h-32 mb-4">
+    <h1 class="text-3xl font-bold mb-2">Hi, I'm Your Name</h1>
+    <p class="mb-4 text-lg">A passionate student and developer specializing in DSA, Data Science, and Data Engineering. I love building projects and gaming.</p>
+    <div class="space-x-4">
+        <span>Email: <a href="mailto:your@email.com" class="text-blue-500">your@email.com</a></span>
+        <span>Location: Hardaspur, PB</span>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Blog{% endblock %}
+{% block content %}
+<h2 class="text-2xl font-semibold mb-4">Blog</h2>
+<ul>
+    {% for post in posts %}
+    <li class="mb-6">
+        <h3 class="text-lg font-bold">{{ post.title }}</h3>
+        <div class="text-sm text-gray-500">{{ post.date }}</div>
+        <p>{{ post.snippet }}</p>
+        <a href="{{ url_for('blog.post', post_id=post.id) }}" class="text-blue-500">Read more</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

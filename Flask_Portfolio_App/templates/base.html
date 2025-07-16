@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Portfolio{% endblock %}</title>
+    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-900">
+    <!-- Navbar -->
+    <nav class="bg-white shadow p-4 flex justify-between items-center">
+        <div class="text-xl font-bold">Your Name</div>
+        <div>
+            <a href="{{ url_for('main.home') }}" class="mx-2">Home</a>
+            <a href="{{ url_for('main.skills') }}" class="mx-2">Skills</a>
+            <a href="{{ url_for('main.projects') }}" class="mx-2">Projects</a>
+            <a href="{{ url_for('main.experience') }}" class="mx-2">Experience</a>
+            <a href="{{ url_for('blog.blog') }}" class="mx-2">Blog</a>
+            <a href="{{ url_for('contact.contact') }}" class="mx-2">Contact</a>
+        </div>
+    </nav>
+    <!-- Page Content -->
+    <main class="container mx-auto py-8">
+        {% block content %}{% endblock %}
+    </main>
+    <!-- Footer -->
+    <footer class="bg-white shadow p-4 text-center">
+        &copy; 2025 Your Name. All rights reserved.
+    </footer>
+</body>
+</html>
