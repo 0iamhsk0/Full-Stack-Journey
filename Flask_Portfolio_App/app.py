@@ -1,26 +1,15 @@
-from flask import Blueprint, render_template
+from flask import Flask
+from blueprints.main import main_bp
+from blueprints.blog import blog_bp
+from blueprints.contact import contact_bp
 
-main = Blueprint('main', __name__)
+app = Flask(__name__)
+app.config['SECRET_KEY'] = 'your_secret_key'
 
-@main.route('/')
-def home():
-    return render_template('home.html')
+# Register Blueprints
+app.register_blueprint(main_bp)
+app.register_blueprint(blog_bp)
+app.register_blueprint(contact_bp)
 
-@main.route('/skills')
-def skills():
-    return render_template('skills.html')
-
-@main.route('/projects')
-def projects():
-    # Load projects from a Python list or JSON
-    return render_template('projects.html', projects=projects_list)
-
-# @main.route('/experience')
-# def experience():
-#     # Load experiences from a Python list or JSON
-#     return render_template('experience.html', experiences=experiences_list)
-
-projects_list = [
-    {"name": "Project 1", "description": "Description...", "tech_stack": "Python, Flask", "github_link": "...", "demo_link": "..."},
-    # more projects...
-]
+if __name__ == "__main__":
+    app.run(debug=True)

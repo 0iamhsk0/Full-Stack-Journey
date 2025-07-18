@@ -1,0 +1,23 @@
+[
+  {
+    "title": "Covid-19 Data Trends and Visual Insights",
+    "description": "Created a dynamic dashboard using Power BI and Excel. Analyzed 6 months of initial covid-19 cases, identified key trends and insights, and performed dashboards and stories.",
+    "tech_stack": ["Power BI", "Excel"],
+    "github": "https://github.com/0iamhsk0",
+    "demo": "Link to the project"
+  },
+  {
+    "title": "Comprehensive U.S Sales Performance Analysis",
+    "description": "Developed an interactive Tableau dashboard. Analyzed profit/loss patterns and regional sales trends. Cleaned and preprocessed data using Tableau Prep, reducing processing time by 25%.",
+    "tech_stack": ["Excel", "Tableau", "Tableau Prep"],
+    "github": "https://github.com/0iamhsk0",
+    "demo": "Link to the project"
+  },
+  {
+    "title": "Retail Sales Analysis",
+    "description": "Analyzed Australian fashion sales data to identify key purchasing patterns. Executed a dynamic multi-dashboard with hyperlinks, slicers, maps, sparklines, and charts. Summarized total sales for dynamic metric identification.",
+    "tech_stack": ["Excel"],
+    "github": "https://github.com/0iamhsk0",
+    "demo": "Link to the project"
+  }
+]

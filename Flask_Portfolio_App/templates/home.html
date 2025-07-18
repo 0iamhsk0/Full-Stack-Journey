@@ -1,13 +1,53 @@
-{% extends "base.html" %}
-{% block title %}Home{% endblock %}
-{% block content %}
-<div class="flex flex-col items-center">
-    <img src="{{ url_for('static', filename='images/yourphoto.jpg') }}" alt="Your photo" class="rounded-full w-32 h-32 mb-4">
-    <h1 class="text-3xl font-bold mb-2">Hi, I'm Your Name</h1>
-    <p class="mb-4 text-lg">A passionate student and developer specializing in DSA, Data Science, and Data Engineering. I love building projects and gaming.</p>
-    <div class="space-x-4">
-        <span>Email: <a href="mailto:your@email.com" class="text-blue-500">your@email.com</a></span>
-        <span>Location: Hardaspur, PB</span>
-    </div>
-</div>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <nav class="bg-white shadow p-4 flex justify-between">
+        <div class="font-bold">Hemanth Sai Kumar Pentakota</div>
+        <div>
+            <a href="/" class="mx-2">Home</a>
+            <a href="/skills" class="mx-2">Skills</a>
+            <a href="/projects" class="mx-2">Projects</a>
+            <a href="/experience" class="mx-2">Experience</a>
+            <a href="/blog" class="mx-2">Blog</a>
+            <a href="/contact" class="mx-2">Contact</a>
+        </div>
+    </nav>
+    <section class="flex flex-col md:flex-row items-center justify-center min-h-[60vh] bg-white mt-10 mx-auto max-w-5xl rounded shadow-lg overflow-hidden">
+        <div class="md:w-1/2 w-full flex justify-center items-center p-0 md:p-6 bg-gradient-to-br from-blue-500 to-blue-700 h-full">
+            <img src="/static/css/profile.jpg" alt="Profile" class="rounded-lg shadow-lg w-72 h-72 object-cover border-4 border-white" />
+        </div>
+        <div class="md:w-1/2 w-full bg-blue-600 text-white p-10 flex flex-col justify-center min-h-full">
+            <h2 class="text-4xl font-extrabold mb-6">About Me</h2>
+            <p class="mb-4 text-lg">I am Hemanth Sai Kumar Pentakota, a data analyst and developer passionate about transforming raw data into real-world impact. I enjoy working with organizations to help them make effective use of their data, from capturing and preparing data to analysis and impactful presentation of insights.</p>
+            <p class="mb-4 text-lg">I am available for short-term projects and part-time longer-term engagements. I also offer training in Tableau and data visualization best practices.</p>
+            <div class="mb-2 flex flex-col gap-1">
+                <span class="font-semibold">Location:</span> Visakhapatnam, Andhra Pradesh
+                <span class="font-semibold">Email:</span> <a href="mailto:hemanthsaikumar@lpu.in" class="underline">hemanthsaikumar@lpu.in</a>
+                <span class="font-semibold">Phone:</span> 8340065854
+                <span class="font-semibold">Links:</span> <a href="https://www.linkedin.com/in/hemanth-sai-kumar-p/" class="underline">LinkedIn</a> | <a href="https://github.com/0iamhsk0" class="underline">GitHub</a>
+            </div>
+        </div>
+    </section>
+    <section class="max-w-5xl mx-auto mt-10 p-8 bg-white rounded shadow-lg">
+        <h2 class="text-3xl font-bold mb-6 text-center text-blue-700">Portfolio</h2>
+        <p class="text-center mb-8 text-lg">A sample of my work</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            {% for project in projects %}
+            <div class="bg-gray-50 p-6 rounded-lg shadow-lg border border-gray-200 hover:scale-105 transition-transform duration-200">
+                <h3 class="text-xl font-semibold mb-2 text-blue-700">{{ project.title }}</h3>
+                <p class="mb-2">{{ project.description }}</p>
+                <p class="text-sm mb-2">Tech Stack: {{ project.tech_stack | join(', ') }}</p>
+                <a href="{{ project.github }}" class="text-blue-500">GitHub</a> |
+                <a href="{{ project.demo }}" class="text-blue-500">Demo</a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</body>
+</html>

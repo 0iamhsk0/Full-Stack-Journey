@@ -2,29 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Portfolio{% endblock %}</title>
-    <link href="{{ url_for('static', filename='css/main.css') }}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-50 text-gray-900">
-    <!-- Navbar -->
-    <nav class="bg-white shadow p-4 flex justify-between items-center">
-        <div class="text-xl font-bold">Your Name</div>
+<body class="bg-gray-100">
+    <nav class="bg-white shadow p-4 flex justify-between">
+        <div class="font-bold">Hemanth Sai Kumar Pentakota</div>
         <div>
-            <a href="{{ url_for('main.home') }}" class="mx-2">Home</a>
-            <a href="{{ url_for('main.skills') }}" class="mx-2">Skills</a>
-            <a href="{{ url_for('main.projects') }}" class="mx-2">Projects</a>
-            <a href="{{ url_for('main.experience') }}" class="mx-2">Experience</a>
-            <a href="{{ url_for('blog.blog') }}" class="mx-2">Blog</a>
-            <a href="{{ url_for('contact.contact') }}" class="mx-2">Contact</a>
+            <a href="/" class="mx-2">Home</a>
+            <a href="/skills" class="mx-2">Skills</a>
+            <a href="/projects" class="mx-2">Projects</a>
+            <a href="/experience" class="mx-2">Experience</a>
+            <a href="/blog" class="mx-2">Blog</a>
+            <a href="/contact" class="mx-2">Contact</a>
         </div>
     </nav>
-    <!-- Page Content -->
-    <main class="container mx-auto py-8">
+    <main class="max-w-2xl mx-auto mt-10 p-6 bg-white rounded shadow">
         {% block content %}{% endblock %}
     </main>
-    <!-- Footer -->
-    <footer class="bg-white shadow p-4 text-center">
-        &copy; 2025 Your Name. All rights reserved.
+    <footer class="text-center py-4 text-gray-500">
+        &copy; 2025 Hemanth Sai Kumar Pentakota. All rights reserved.
     </footer>
 </body>
 </html>

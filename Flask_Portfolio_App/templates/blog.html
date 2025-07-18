@@ -1,15 +1,32 @@
-{% extends "base.html" %}
-{% block title %}Blog{% endblock %}
-{% block content %}
-<h2 class="text-2xl font-semibold mb-4">Blog</h2>
-<ul>
-    {% for post in posts %}
-    <li class="mb-6">
-        <h3 class="text-lg font-bold">{{ post.title }}</h3>
-        <div class="text-sm text-gray-500">{{ post.date }}</div>
-        <p>{{ post.snippet }}</p>
-        <a href="{{ url_for('blog.post', post_id=post.id) }}" class="text-blue-500">Read more</a>
-    </li>
-    {% endfor %}
-</ul>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-white shadow p-4 flex justify-between">
+        <div class="font-bold">Hemanth Sai Kumar Pentakota</div>
+        <div>
+            <a href="/" class="mx-2">Home</a>
+            <a href="/skills" class="mx-2">Skills</a>
+            <a href="/projects" class="mx-2">Projects</a>
+            <a href="/experience" class="mx-2">Experience</a>
+            <a href="/blog" class="mx-2">Blog</a>
+            <a href="/contact" class="mx-2">Contact</a>
+        </div>
+    </nav>
+    <section class="max-w-2xl mx-auto mt-10 p-6 bg-white rounded shadow">
+        <h2 class="text-2xl font-bold mb-4">Blog</h2>
+        {% for post in posts %}
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold">{{ post.title }}</h3>
+            <p class="text-sm text-gray-500">{{ post.date }}</p>
+            <p>{{ post.content }}</p>
+        </div>
+        {% endfor %}
+    </section>
+</body>
+</html>

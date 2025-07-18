@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Completed Machine Learning & Data Science Course!",
+    "date": "2025-05-18",
+    "content": "Excited to share that I've completed the Complete Machine Learning & Data Science course from GeeksforGeeks! This journey strengthened my foundation in ML and DS, and I’m looking forward to applying these skills in real-world projects. #MachineLearning #DataScience #GeeksforGeeks"
+  },
+  {
+    "title": "American Superstore Sales Analysis with Tableau",
+    "date": "2024-10-18",
+    "content": "Analyzed American superstore sales data using Tableau. Explored business metrics like sales, profit, and discounts across categories and regions. Key features: Choropleth Map, Sales vs. Profit Analysis, Donut Charts, Histogram, Dynamic Filters, and Pages shelf. Presented actionable insights for businesses and improved my data visualization skills. #Tableau #DataAnalytics #BusinessIntelligence"
+  },
+  {
+    "title": "COVID-19 Data Visualization Project",
+    "date": "2024-07-18",
+    "content": "Analyzed COVID-19 data from the first six months of the pandemic using Tableau. Key features: Choropleth Map, Dual Axis Line Chart, Race Bar Chart, Filters, and Dashboards. Presented global case trends and insights interactively. Enhanced my data storytelling and analytical skills. #Tableau #DataVisualization #COVID19Analysis"
+  }
+]

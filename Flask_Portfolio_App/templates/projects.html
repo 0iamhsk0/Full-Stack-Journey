@@ -1,18 +1,34 @@
-{% extends "base.html" %}
-{% block title %}Projects{% endblock %}
-{% block content %}
-<h2 class="text-2xl font-semibold mb-4">Projects</h2>
-<div class="grid md:grid-cols-2 gap-6">
-    {% for project in projects %}
-    <div class="bg-white p-6 rounded shadow">
-        <h3 class="text-xl font-bold">{{ project.name }}</h3>
-        <p class="mb-2">{{ project.description }}</p>
-        <div class="mb-2 text-sm text-gray-500">Tech Stack: {{ project.tech_stack }}</div>
-        <a href="{{ project.github_link }}" class="text-blue-500 mr-2">GitHub</a>
-        {% if project.demo_link %}
-        <a href="{{ project.demo_link }}" class="text-blue-500">Demo</a>
-        {% endif %}
-    </div>
-    {% endfor %}
-</div>
-{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | Portfolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-white shadow p-4 flex justify-between">
+        <div class="font-bold">Hemanth Sai Kumar Pentakota</div>
+        <div>
+            <a href="/" class="mx-2">Home</a>
+            <a href="/skills" class="mx-2">Skills</a>
+            <a href="/projects" class="mx-2">Projects</a>
+            <a href="/experience" class="mx-2">Experience</a>
+            <a href="/blog" class="mx-2">Blog</a>
+            <a href="/contact" class="mx-2">Contact</a>
+        </div>
+    </nav>
+    <section class="max-w-2xl mx-auto mt-10 p-6 bg-white rounded shadow">
+        <h2 class="text-2xl font-bold mb-4">Projects</h2>
+        {% for project in projects %}
+        <div class="mb-6">
+            <h3 class="text-xl font-semibold">{{ project.title }}</h3>
+            <p>{{ project.description }}</p>
+            <p class="text-sm">Tech Stack: {{ project.tech_stack | join(', ') }}</p>
+            <a href="{{ project.github }}" class="text-blue-500">GitHub</a> |
+            <a href="{{ project.demo }}" class="text-blue-500">Demo</a>
+        </div>
+        {% endfor %}
+    </section>
+</body>
+</html>
