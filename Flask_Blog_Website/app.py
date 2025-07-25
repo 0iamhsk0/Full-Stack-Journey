@@ -22,7 +22,7 @@ def load_users():
             return json.load(f)
     except FileNotFoundError:
         return []
-
+###
 def save_posts(posts):
     with open('posts.json', 'w') as f:
         json.dump(posts, f, indent=2)
